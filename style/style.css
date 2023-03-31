@@ -2,8 +2,26 @@ body {
   font-family: sans-serif;
 }
 
+li {
+  list-style: none;
+}
+
 .modal {
   background-color: #fff;
   padding: 15px;
   border-radius: 4px;
+}
+
+.list img {
+  /* transform: translateX(-50%);
+  opacity: 0; */
+  transition: all 300ms linear;
+  width: 640px;
+  height: 480px;
+  object-fit: cover;
+}
+
+.list img.appear {
+  opacity: 1;
+  transform: translateX(0);
 }

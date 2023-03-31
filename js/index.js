@@ -5,31 +5,29 @@ const instance = basicLightbox.create(`
    <img src ="">
    <button>Close</button>
   </div>
-`)
-
-
+`);
 
 const refs = {
-  buttons: document.querySelector('.js-buttons'),
-  image: instance.element().querySelector('img'),
-  closeButton:instance.element().querySelector('button')
-}
+  buttons: document.querySelector(".js-buttons"),
+  image: instance.element().querySelector("img"),
+  closeButton: instance.element().querySelector("button"),
+};
 let image;
 
+refs.buttons.addEventListener("click", onOpenBtn);
+refs.closeButton.addEventListener("click", onCloseModal);
 
-refs.buttons.addEventListener('click', onOpenBtn);
-refs.closeButton.addEventListener('click', onCloseModal);
- 
 function onOpenBtn() {
-  refs.image.src = '/img/image.jpg';
-  console.log(instance.element())
-  instance.show()
+  refs.image.src = "/img/image.jpg";
+  console.log(instance.element());
+  instance.show();
 }
 
-function onCloseModal(event) { 
-  instance.close()
+function onCloseModal() {
+  instance.close();
+  onClickToEscape();
 }
- 
 
-
-
+function onClickToEscape(e) {
+  console.log(e);
+}
